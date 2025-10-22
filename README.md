@@ -28,12 +28,12 @@ Backups para ggs
 2. si es la primera vez
    a. correr create user admin (SIN CREACIÓN DB) (el owner no porque es el mismo)
 
-grant connect on database "ggs2025_db" to "ggs2025_backups_admin";
-grant usage on schema "base" to ggs2025_backups_admin;
-grant select on base.tareas_tem to ggs2025_backups_admin;
-grant select on base.tem_hogar to ggs2025_backups_admin;
-grant select on base.personas to ggs2025_backups_admin;
-grant select on base.tem to ggs2025_backups_admin;
+grant connect on database "ggs2025_db" to "ggs_backups2025_admin";
+grant usage on schema "base" to ggs_backups2025_admin;
+grant select on base.tareas_tem to ggs_backups2025_admin;
+grant select on base.tem_blaise to ggs_backups2025_admin;
+grant select on base.personas to ggs_backups2025_admin;
+grant select on base.tem to ggs_backups2025_admin;
 
 grant usage on schema "backups" to ggs2025_admin;
 grant select on backups.backups to ggs2025_admin;

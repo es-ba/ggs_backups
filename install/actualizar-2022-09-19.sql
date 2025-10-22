@@ -9,7 +9,7 @@ select th.*,
     tt.verif_campo,
     b.*
     from backups b 
-    join base.tem_hogar th on (b.respid = th.idblaise)
+    join base.tem_blaise th on (b.respid = th.idblaise)
     join base.tem t on t.operativo=th.operativo and t.enc=th.enc
     left join base.personas p on (p.operativo = th.operativo AND p.vivienda = th.enc AND p.hogar = th.hogar AND th.idblaise = p.id_blaise::integer)
     left join lateral (

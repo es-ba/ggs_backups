@@ -8,7 +8,7 @@ export function grilla_match_id(): TableDefinition {
     let def = backups();
     def.title='Consistencias Blaise'
     const ggs_fields = [
-        //campos base.tem_hogar
+        //campos base.tem_blaise
         {name:'idblaise'   ,  typeName: 'integer',  editable: false },
         {name:'operativo'  ,  typeName: 'text',     editable: false },
         {name:'enc'        ,  typeName: 'text',     editable: false },
@@ -30,11 +30,6 @@ export function grilla_match_id(): TableDefinition {
         //campos base.tareas_tem
         {name:'verif_campo'      ,  typeName: 'text',  editable: false },
     ]
-
-    // Gladys no pidió que se muestren los campos de codificación
-    // // en la grilla de matching no se puede codificar
-    // const codificacionFields = ['cno_padre','ciuo_padre','cno_madre','ciuo_madre','cno_ocup_actual','ciuo_ocup_actual','cno_ocup_anterior','ciuo_ocup_anterior','cno_ocup_pareja','ciuo_ocup_pareja']
-    // codificacionFields.forEach(codFieldName=>def.fields.find(f=>f.name===codFieldName)!.editable=false)
     
     //@ts-ignore
     def.fields=[...ggs_fields, ...def.fields]
@@ -58,7 +53,7 @@ export function grilla_match_id(): TableDefinition {
                 tt.verif_campo,
                 b.*
                 from backups b 
-                join base.tem_hogar th on (b.respid = th.idblaise)
+                join base.tem_blaise th on (b.respid = th.idblaise)
                 join base.tem t on t.operativo=th.operativo and t.enc=th.enc
                 left join base.personas p on (p.operativo = th.operativo AND p.vivienda = th.enc AND p.hogar = th.hogar AND th.idblaise = p.id_blaise::integer)
                 left join lateral (
