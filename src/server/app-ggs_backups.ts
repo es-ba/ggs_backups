@@ -20,7 +20,7 @@ import { lotes } from "./table-lotes";
 import { backups } from "./table-backups";
 import { staticConfigYaml } from "./def-config";
 import { grilla_match_id } from "./grilla_match_id";
-import { grilla_rea_sin_blaise } from "./grilla-rea_sin_blaise";
+import { grilla_rea_sin_blaise } from "./grilla_rea_sin_blaise";
 import { cod_padre } from "./grilla-cod_padre";
 import { cod_madre } from "./grilla-cod_madre";
 import { cod_ocupacion_actual } from "./grilla-cod_ocupacion_actual";
