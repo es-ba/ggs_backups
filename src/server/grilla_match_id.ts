@@ -62,7 +62,7 @@ export function grilla_match_id(): TableDefinition {
                     LEFT JOIN backups otrob ON b.respid=otrob.respid AND otrob.lote <>b.lote AND otrob.verificado_procesamiento
                 WHERE 
                     b.verificado_procesamiento
-                    or (b.lote = (select max(lote) FROM lotes))
+                    OR (b.lote = (select max(lote) FROM lotes))
                     AND otrob.respid is null)`,
             insertIfNotUpdate:false
         })
