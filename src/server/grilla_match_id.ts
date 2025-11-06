@@ -42,26 +42,28 @@ export function grilla_match_id(): TableDefinition {
     def.sql = changing(def.sql||{}, 
         {
             isTable:false,
-            from:`(select tb.*,
-                v.msnombrei,
-                t.rea, t.norea, 
-                tt.verif_campo,
-                b.*
-                from backups b 
-                join base.tem_blaise tb on (b.respid = tb.idblaise)
-                join base.tem t on t.operativo=tb.operativo and t.enc=tb.enc
-                left join base.viviendas v on (v.operativo = tb.operativo AND v.vivienda = tb.enc AND tb.idblaise = v.id_blaise)
-                left join lateral (
-                    select case when count(*) = count(verificado) then max(tt.verificado)else null end verif_campo 
-                      from base.tareas_tem tt 
-                      where tt.operativo = tb.operativo AND tt.enc=tb.enc 
-                        and tt.tarea in ('encu','recu') and tt.asignado is not null and tt.operacion is not null
-                ) as tt on true
-                left join backups otrob on b.respid=otrob.respid and otrob.lote <>b.lote and otrob.verificado_procesamiento
-                    where 
-                        b.verificado_procesamiento
-                        or (b.lote = (select max(lote) from lotes))
-                        and otrob.respid is null)`,
+            from:`(
+                SELECT
+                    tb.*,
+                    v.msnombrei,
+                    t.rea, t.norea, 
+                    tt.verif_campo,
+                    b.*
+                FROM backups b 
+                    JOIN base.tem_blaise tb ON (b.respid = tb.idblaise)
+                    JOIN base.tem t ON t.operativo=tb.operativo AND t.enc=tb.enc
+                    LEFT JOIN base.viviendas v ON (v.operativo = tb.operativo AND v.vivienda = tb.enc AND tb.idblaise = v.id_blaise)
+                    LEFT JOIN lateral (
+                        select case when count(*) = count(verificado) then max(tt.verificado) else null end verif_campo 
+                        FROM base.tareas_tem tt 
+                        WHERE tt.operativo = tb.operativo AND tt.enc=tb.enc 
+                            AND tt.tarea = 'encu' AND tt.asignado is not null AND tt.operacion is not null
+                    ) as tt ON true
+                    LEFT JOIN backups otrob ON b.respid=otrob.respid AND otrob.lote <>b.lote AND otrob.verificado_procesamiento
+                WHERE 
+                    b.verificado_procesamiento
+                    or (b.lote = (select max(lote) FROM lotes))
+                    AND otrob.respid is null)`,
             insertIfNotUpdate:false
         })
   return def;
