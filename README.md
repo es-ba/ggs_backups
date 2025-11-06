@@ -32,7 +32,7 @@ grant connect on database "ggs2025_db" to "ggs_backups2025_admin";
 grant usage on schema "base" to ggs_backups2025_admin;
 grant select on base.tareas_tem to ggs_backups2025_admin;
 grant select on base.tem_blaise to ggs_backups2025_admin;
-grant select on base.personas to ggs_backups2025_admin;
+grant select on base.viviendas to ggs_backups2025_admin;
 grant select on base.tem to ggs_backups2025_admin;
 
 grant usage on schema "backups" to ggs2025_admin;
