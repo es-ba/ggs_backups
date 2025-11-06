@@ -113,11 +113,11 @@ export class Appggs_backups extends AppBackend {
       backups,
       grilla_match_id,
       grilla_rea_sin_blaise,
-      cod_padre,
-      cod_madre,
-      cod_ocupacion_actual,
-      cod_ocupacion_anterior,
-      cod_pareja,
+      // cod_padre,
+      // cod_madre,
+      // cod_ocupacion_actual,
+      // cod_ocupacion_anterior,
+      // cod_pareja,
     };
   }
 }
