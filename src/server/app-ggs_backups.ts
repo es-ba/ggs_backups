@@ -72,15 +72,15 @@ export class Appggs_backups extends AppBackend {
     menuContent.push({ menuType: "table", name: "lotes" });
     menuContent.push({ menuType: "table", name: "backups" });
     menuContent.push({ menuType: "table", name: "grilla_match_id", label: 'consistencias blaise'});
-    menuContent.push({ menuType: "menu", name: "codificacion", label: "codificación",
-        menuContent: [ 
-            { menuType: "table", name: "cod_padre"},
-            { menuType: "table", name: "cod_madre"}, 
-            { menuType: "table", name: "cod_ocupacion_actual"}, 
-            { menuType: "table", name: "cod_ocupacion_anterior"}, 
-            { menuType: "table", name: "cod_pareja"}, 
-        ],
-    });
+    // menuContent.push({ menuType: "menu", name: "codificacion", label: "codificación",
+    //     menuContent: [ 
+    //         { menuType: "table", name: "cod_padre"},
+    //         { menuType: "table", name: "cod_madre"}, 
+    //         { menuType: "table", name: "cod_ocupacion_actual"}, 
+    //         { menuType: "table", name: "cod_ocupacion_anterior"}, 
+    //         { menuType: "table", name: "cod_pareja"}, 
+    //     ],
+    // });
     menuContent.push({ menuType: "menu", name: "config", label: "configurar",
         menuContent: [ { menuType: "table", name: "usuarios" }, ],
     });

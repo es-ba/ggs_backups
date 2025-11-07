@@ -18,17 +18,17 @@ export function backups(): TableDefinition {
         
         { name: "lote", typeName: "integer", editable: false},
         
-        //campos para codificacion
-        { name: "cno_padre",        typeName: "integer"},
-        { name: "ciuo_padre",       typeName: "integer"},
-        { name: "cno_madre",        typeName: "integer"},
-        { name: "ciuo_madre",       typeName: "integer"},
-        { name: "cno_ocup_actual",  typeName: "integer"},
-        { name: "ciuo_ocup_actual", typeName: "integer"},
-        { name: "cno_ocup_anterior",  typeName: "integer"},
-        { name: "ciuo_ocup_anterior", typeName: "integer"},
-        { name: "cno_ocup_pareja",  typeName: "integer"},
-        { name: "ciuo_ocup_pareja", typeName: "integer"},
+        // //campos para codificacion - anulados para esta prueba de concepto
+        // { name: "cno_padre",        typeName: "integer"},
+        // { name: "ciuo_padre",       typeName: "integer"},
+        // { name: "cno_madre",        typeName: "integer"},
+        // { name: "ciuo_madre",       typeName: "integer"},
+        // { name: "cno_ocup_actual",  typeName: "integer"},
+        // { name: "ciuo_ocup_actual", typeName: "integer"},
+        // { name: "cno_ocup_anterior",  typeName: "integer"},
+        // { name: "ciuo_ocup_anterior", typeName: "integer"},
+        // { name: "cno_ocup_pareja",  typeName: "integer"},
+        // { name: "ciuo_ocup_pareja", typeName: "integer"},
 
         //campos fuentes externas:
 
