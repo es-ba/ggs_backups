@@ -13,6 +13,7 @@ data:
   transformers:
     text: normal
 login:
+  infoFieldList: [usuario, rol, idper]
   table: usuarios
   userFieldName: usuario
   passFieldName: md5clave

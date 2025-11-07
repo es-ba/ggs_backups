@@ -38,6 +38,9 @@ grant select on base.tem to ggs_backups2025_admin;
 grant usage on schema "backups" to ggs2025_admin;
 grant select on backups.backups to ggs2025_admin;
 
+borrar la creación de tablas del schema his (summarize, token, bitacora)
+
+
 3. al final del archivo db-dump.sql agregarle prefijo "base." a los llamados a enance_table
 
 ## TODO, automarizar:
