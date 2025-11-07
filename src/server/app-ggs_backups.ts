@@ -20,11 +20,11 @@ import { lotes } from "./table-lotes";
 import { backups } from "./table-backups";
 import { staticConfigYaml } from "./def-config";
 import { grilla_match_id } from "./grilla_match_id";
-import { cod_padre } from "./grilla-cod_padre";
-import { cod_madre } from "./grilla-cod_madre";
-import { cod_ocupacion_actual } from "./grilla-cod_ocupacion_actual";
-import { cod_ocupacion_anterior } from "./grilla-cod_ocupacion_anterior";
-import { cod_pareja } from "./grilla-cod_pareja";
+// import { cod_padre } from "./grilla-cod_padre";
+// import { cod_madre } from "./grilla-cod_madre";
+// import { cod_ocupacion_actual } from "./grilla-cod_ocupacion_actual";
+// import { cod_ocupacion_anterior } from "./grilla-cod_ocupacion_anterior";
+// import { cod_pareja } from "./grilla-cod_pareja";
 
 export class Appggs_backups extends AppBackend {
   constructor() {
