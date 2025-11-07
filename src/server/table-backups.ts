@@ -31,8 +31,7 @@ export function backups(): TableDefinition {
         // { name: "ciuo_ocup_pareja", typeName: "integer"},
 
         //campos fuentes externas:
-
-        // campos agregados de backup CAWI 6/11
+        // campos agregados de backups CAWI e INT enviados por alex 7/11
         {name: "respid", typeName: 'text', editable:false},
 
         {name: "intdate", typeName: 'text', editable:false},
@@ -1258,7 +1257,6 @@ export function backups(): TableDefinition {
         {name: "ecpint", typeName: 'text', editable:false},
         {name: "missing_ab", typeName: 'text', editable:false},
 
-        // campos agregados de backup INT 6/11
         {name: "dem202_dv", typeName: 'text', editable:false},
         {name: "unipre", typeName: 'text', editable:false},
         {name: "kid03_mimp_1", typeName: 'text', editable:false},
