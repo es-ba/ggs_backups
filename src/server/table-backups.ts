@@ -40,7 +40,7 @@ export function backups(): TableDefinition {
         {name: "instrument", typeName: 'text', editable:false},
         {name: "mode", typeName: 'text', editable:false},
         {name: "interviewer_id", typeName: 'text', editable:false},
-        {name: "interviewer_name", typeName: 'text', editable:false},     
+        {name: "interviewer_name", typeName: 'text', editable:false},
         {name: "status", typeName: 'text', editable:false},
         {name: "agreedintro", typeName: 'text', editable:false},
         {name: "complete", typeName: 'text', editable:false},

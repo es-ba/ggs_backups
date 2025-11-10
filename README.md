@@ -25,23 +25,32 @@ Backups para ggs
 ## regenerar tables_backup
 
 1. npm run build, npm start -- --dump-db
-2. si es la primera vez
-   a. correr create user admin (SIN CREACIÓN DB) (el owner no porque es el mismo)
+2. Editar local-db-dump
+- si es la primera vez correr create user admin (SIN CREACIÓN DB) (el owner no porque es el mismo)
+- borrar la creación de tablas del schema his (summarize, token, bitacora), y sus constraints
+- al final del archivo db-dump.sql agregarle prefijo "base." a los llamados a enance_table
+3. 
 
-grant connect on database "ggs2025_db" to "ggs_backups2025_admin";
-grant usage on schema "base" to ggs_backups2025_admin;
-grant select on base.tareas_tem to ggs_backups2025_admin;
-grant select on base.tem_blaise to ggs_backups2025_admin;
-grant select on base.viviendas to ggs_backups2025_admin;
-grant select on base.tem to ggs_backups2025_admin;
+GRANT CONNECT ON database "ggs2025_db" to "ggs_backups2025_admin";
+GRANT USAGE ON schema "base" to ggs_backups2025_admin;
+GRANT USAGE ON schema "his" to ggs_backups2025_admin;
+GRANT SELECT ON base.tareas_tem to ggs_backups2025_admin;
+GRANT SELECT ON base.tem_blaise to ggs_backups2025_admin;
+GRANT SELECT ON base.viviendas to ggs_backups2025_admin;
+GRANT SELECT ON base.tem to ggs_backups2025_admin;
 
-grant usage on schema "backups" to ggs2025_admin;
-grant select on backups.backups to ggs2025_admin;
+GRANT SELECT ON base.secuencia_bitacora to ggs_backups2025_admin;
+GRANT USAGE, SELECT ON SEQUENCE base.secuencia_bitacora TO ggs_backups2025_admin;
+GRANT UPDATE ON SEQUENCE base.secuencia_bitacora TO ggs_backups2025_admin;
 
-borrar la creación de tablas del schema his (summarize, token, bitacora)
+GRANT SELECT ON his.bitacora to ggs_backups2025_admin;
+GRANT SELECT ON his.summary to ggs_backups2025_admin;
+GRANT SELECT ON his.tokens to ggs_backups2025_admin;
 
 
-3. al final del archivo db-dump.sql agregarle prefijo "base." a los llamados a enance_table
+GRANT USAGE ON schema "backups" to ggs2025_admin;
+GRANT SELECT ON backups.backups to ggs2025_admin;
+
 
 ## TODO, automarizar:
 
