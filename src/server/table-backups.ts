@@ -32,10 +32,10 @@ export function backups(): TableDefinition {
         // { name: "ciuo_ocup_pareja", typeName: "integer"},
 
         //campos fuentes externas:
-        // campos agregados de backups CAWI e INT enviados por alex 7/11
+        // campos agregados de backups
         { name: "respid", typeName: 'text', editable:false},
 		//decision Silvana 10/11
-		// columnas solo INT
+		// columnas solo bkp INT
 		{ name:"interviewer_id"          , typeName: "text", editable: false },
 		{ name:"interviewer_name"        , typeName: "text", editable: false },
 		{ name:"intst"                   , typeName: "text", editable: false },
