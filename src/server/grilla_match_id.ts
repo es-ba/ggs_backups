@@ -19,8 +19,15 @@ export function grilla_match_id(): TableDefinition {
         //campos base.tem
         {name:'rea'      ,  typeName: 'integer',  editable: false },
         {name:'norea'      ,  typeName: 'integer',  editable: false },
+        {name: 'resumen_estado' , typeName:'text',  editable:false},
+        {name:'rea_web'         , typeName: 'integer',  editable: false },
+        {name:'rea_tel'         , typeName: 'integer',  editable: false },
+        {name:'rea_pres'        , typeName: 'integer',  editable: false },
+        {name:'tarea_actual'    , typeName: 'text'  ,  editable: false },
+        //{name:'resultado'       , typeName: 'text'    ,  editable: false },
+        {name:'result_sup'      , typeName: 'integer' ,  editable: false },
         //campos base.tareas_tem
-        {name:'verif_campo'      ,  typeName: 'text',  editable: false },
+        {name:'verif_campo'     ,  typeName: 'text' ,  editable: false },
     ]
     
     //@ts-ignore
@@ -31,7 +38,8 @@ export function grilla_match_id(): TableDefinition {
     const fieldsToShow = ['idblaise', 'operativo', 'enc', 'msnombrei', 'rea', 'norea', 'verif_campo', 'verificado_procesamiento', 'observaciones', 'resul_proc', 'lote', 'observaciones', 'respid', 
         //int01 ya no está en el nuevo backup (del 29/10 que mandó alex, sacamos de acá en adelante)
         //'int01', 'int02', 'dem01', 'dem02', 'dem03', 'dem06', 'dem07', 'dem08', 'dem09', 'dem11', 'dem14', 'dem21', 'gen01', 'gen02', 'gen11', 'gen25', 'gen44b', 'hhd24a', 'hhd28', 'hhd35', 'wel01', 'wel02', 'wel02a', 'lhi01', 'lhi02', 'att08', 'breportrep01', 'breportrep04', 'breportrep02', 'breportrep06', 'breportrep07', 'complete', 'agreedintro', 'begindate', 'begintime', 'enddate', 'endtime', 'numbiol', 'numstep', 'numadopt', 'totalchildren', 'hhd01b'
-        ]
+        'interviewer_id', 'interviewer_name', 'b1dem01', 'b1dem02', 'b10hhd01b', 'b11gen01', 'b11gen02', 'numbiol', 'numstep', 'numadopt', 'nkidstotal', 'age', 'partnerage', 'hascorespartner', 'hascoreschildunder15', 'mumcores', 'dadcores', 'adopt_step_fos', 'begindate', 'begintime', 'enddate', 'endtime', 'complete', 'agreedintro'
+    ]
     
     fieldsToShow.forEach(fNameToShow=>{
         const fieldToShow=def.fields.find(f=>f.name===fNameToShow)
@@ -46,7 +54,9 @@ export function grilla_match_id(): TableDefinition {
                 SELECT
                     tb.*,
                     v.msnombrei,
-                    t.rea, t.norea, 
+                    t.rea, t.norea, t.resumen_estado, t.resultado, t.result_sup,
+                    v.rea_web, v.rea_tel, v.rea_pres, 
+                    t.tarea_actual,
                     tt.verif_campo,
                     b.*
                 FROM backups b 
