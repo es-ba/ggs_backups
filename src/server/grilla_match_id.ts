@@ -35,7 +35,7 @@ export function grilla_match_id(): TableDefinition {
     
     // Solo se ven campos que pide procesamiento
     def.fields.forEach(f=>f.visible=false); // set all not visible
-    const fieldsToShow = ['idblaise', 'operativo', 'enc', 'msnombrei', 'rea', 'norea', 'verif_campo', 'verificado_procesamiento', 'observaciones', 'resul_proc', 'lote', 'observaciones', 'respid', 
+    const fieldsToShow = ['idblaise', 'operativo', 'enc', 'msnombrei', 'rea', 'norea', 'rea_web', 'rea_tel', 'rea_pres', 'verif_campo', 'verificado_procesamiento', 'observaciones', 'resul_proc', 'lote', 'observaciones', 'respid', 
         //int01 ya no está en el nuevo backup (del 29/10 que mandó alex, sacamos de acá en adelante)
         //'int01', 'int02', 'dem01', 'dem02', 'dem03', 'dem06', 'dem07', 'dem08', 'dem09', 'dem11', 'dem14', 'dem21', 'gen01', 'gen02', 'gen11', 'gen25', 'gen44b', 'hhd24a', 'hhd28', 'hhd35', 'wel01', 'wel02', 'wel02a', 'lhi01', 'lhi02', 'att08', 'breportrep01', 'breportrep04', 'breportrep02', 'breportrep06', 'breportrep07', 'complete', 'agreedintro', 'begindate', 'begintime', 'enddate', 'endtime', 'numbiol', 'numstep', 'numadopt', 'totalchildren', 'hhd01b'
         'interviewer_id', 'interviewer_name', 'b1dem01', 'b1dem02', 'b10hhd01b', 'b11gen01', 'b11gen02', 'numbiol', 'numstep', 'numadopt', 'nkidstotal', 'age', 'partnerage', 'hascorespartner', 'hascoreschildunder15', 'mumcores', 'dadcores', 'adopt_step_fos', 'begindate', 'begintime', 'enddate', 'endtime', 'complete', 'agreedintro'
@@ -53,9 +53,8 @@ export function grilla_match_id(): TableDefinition {
             from:`(
                 SELECT
                     tb.*,
-                    v.msnombrei,
+                    v.msnombrei, v.rea_web, v.rea_tel, v.rea_pres,
                     t.rea, t.norea, t.resumen_estado, t.resultado, t.result_sup,
-                    v.rea_web, v.rea_tel, v.rea_pres, 
                     t.tarea_actual,
                     tt.verif_campo,
                     b.*
