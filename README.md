@@ -43,7 +43,7 @@ GRANT SELECT ON base.secuencia_bitacora to ggs_backups2025_admin;
 GRANT USAGE, SELECT ON SEQUENCE base.secuencia_bitacora TO ggs_backups2025_admin;
 GRANT UPDATE ON SEQUENCE base.secuencia_bitacora TO ggs_backups2025_admin;
 
-GRANT SELECT ON his.bitacora to ggs_backups2025_admin;
+GRANT SELECT, INSERT, UPDATE, DELETE ON his.bitacora to ggs_backups2025_admin;
 GRANT SELECT ON his.summary to ggs_backups2025_admin;
 GRANT SELECT ON his.tokens to ggs_backups2025_admin;
 
