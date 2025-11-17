@@ -13,6 +13,7 @@ install:
 client-setup:
   lang: es
   title: GGS_BACKUPS2025
+  background-img: ""
 devel:
   delay: 0
 log:
